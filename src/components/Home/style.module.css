@@ -1,0 +1,33 @@
+.home {
+    background-color: #1f2326;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+}
+
+.field {
+    font-size: 20px;
+    font-family: 'Open Sans';
+    padding: 8px;
+    width: 50vw;
+    border-radius: 8px;
+    background: hsla(0, 0%, 100%, .08);
+    color: #eee;
+    transition: background-color .2s, color .2s;
+    border: none;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+}
+
+.message {
+    font-size: 12px;
+    font-family: 'Open Sans';
+    color: hsla(0, 0%, 100%, .08);
+    display: block;
+}
+
+.field:focus {
+    background-color: #eee;
+    color: #222;
+}
