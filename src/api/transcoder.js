@@ -1,10 +1,14 @@
 import { API_URL } from "../config";
+import { createCompatibilityMap } from "./codecMap";
 
 export const analyze = async (url) => {
     const data = fetch(`${API_URL}media/analyze`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url })
+        body: JSON.stringify({
+            url,
+            supported: createCompatibilityMap()
+        })
     }).then(d => d.json())
     return data;
 }
@@ -19,18 +23,7 @@ export const start = async (url = '', profile = 0, videoTrack = 0, audioTracks =
             video: videoTrack,
             audio: audioTracks[0],
             subtitle: '',
-            protocol: 'DASH', // In the future, the server will choose the protocol based on compatibility map, not the client
-            supported: [{ // Example, not supportd yet
-                "type": "HLS",
-                "video": [
-                    { "codec": "h264" },
-                    { "codec": "webm" },
-                ],
-                "audio": [
-                    { "codec": "aac" },
-                    { "codec": "ogg" },
-                ]
-            }]
+            supported: createCompatibilityMap()
         })
     }).then(d => d.json())
     return data;

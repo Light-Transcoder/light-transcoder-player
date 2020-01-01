@@ -20,7 +20,7 @@ const App = () => {
     return <div className={style.home}>
        {!session && <Home onChange={onStart} loading={url !== false} value={localStorage.getItem('lastUrl')} />}
        {session && session.stream && session.stream.type === "DASH" && <PlayerShaka url={session.stream.url} />}
-       {session && session.stream && session.stream.type === "DIRECT" && <PlayerBasic url={session.stream.url} />}
+       {session && session.stream && session.stream.type === "DOWNLOAD" && <PlayerBasic url={session.stream.url} />}
     </div>
 };
 
