@@ -22,7 +22,7 @@ export const createCompatibilityMap = () => ([
         type: "HLS",
         // Video codecs supported by HLS: H264, HEVC
         video: [
-            { codec: "x264" }, // All modern browsers supports H264
+            { codec: "h264" }, // All modern browsers supports H264
             ...((canPlayHevc()) ? [{ codec: "hevc" }] : []), // Supported by Microsoft Edge
         ],
         // Audio codecs supported by HLS: MP3, AC3 (Dolby Digital), EC3 (Dolby Digital Plus), AAC (AAC-LC, HE-AAC1, HE-AAC2)
@@ -39,7 +39,7 @@ export const createCompatibilityMap = () => ([
             { container: "webm" },
         ],
         video: [
-            { codec: "x264" }, // All modern browsers supports H264
+            { codec: "h264" }, // All modern browsers supports H264
             ...(canPlayHevc() ? [{ codec: "hevc" }] : []), // Supported by Microsoft Edge
             ...(canPlayAv1() ? [{ codec: "av1" }] : []), // Supported by Chrome and Firefox
             ...(canPlayVp8() ? [{ codec: "vp8" }] : []), // Supported by Chrome, Firefox and Microsoft Edge
@@ -59,7 +59,7 @@ export const createCompatibilityMap = () => ([
     }, {
         type: "DASH",
         video: [
-            { codec: "x264" }, // All modern browsers supports H264
+            { codec: "h264" }, // All modern browsers supports H264
             ...(canPlayHevc() ? [{ codec: "hevc" }] : []), // Supported by Microsoft Edge
             ...(canPlayAv1() ? [{ codec: "av1" }] : []), // Supported by Chrome and Firefox
             ...(canPlayVp8() ? [{ codec: "vp8" }] : []), // Supported by Chrome, Firefox and Microsoft Edge
