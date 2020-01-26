@@ -32,7 +32,7 @@ export const start = async (url = '', profile = 0, videoTrack = 0, audioTracks =
 export const autoStart = async (url, maxBitrate = 15000) => {
     console.log(`Selecting profiles matching with maxBitrate=${maxBitrate}`);
     const data = await analyze(url);
-    const profiles = data.profiles.filter((p) => (p.bitrate <= maxBitrate));
+    const profiles = data.profiles.filter((p) => (p.bitrate <= maxBitrate || maxBitrate === -1));
     console.log('File scan', data)
     const startData = await start(url, profiles[profiles.length - 1].id, data.tracks.video[0].id, data.tracks.audio.map((a) => (a.id)), []);
     console.log('Session', startData);

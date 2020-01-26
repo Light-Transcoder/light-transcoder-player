@@ -13,7 +13,7 @@ const App = () => {
     const onStart = (newUrl) => {
         localStorage.setItem('lastUrl', newUrl);
         setUrl(newUrl);
-        autoStart(newUrl, 10000).then((data) => {
+        autoStart(newUrl, window.bitrateLimit).then((data) => {
             setSession(data.session)
         })
     }

@@ -12,7 +12,7 @@
     padding: 8px;
     width: 50vw;
     border-radius: 8px;
-    background: hsla(0, 0%, 100%, .08);
+    background: hsla(0, 0%, 100%, .3);
     color: #eee;
     transition: background-color .2s, color .2s;
     border: none;
@@ -23,11 +23,31 @@
 .message {
     font-size: 12px;
     font-family: 'Open Sans';
-    color: hsla(0, 0%, 100%, .08);
+    color: hsla(0, 0%, 100%, .3);
     display: block;
 }
 
 .field:focus {
     background-color: #eee;
     color: #222;
+}
+
+.select {
+    font-size: 12px;
+    font-family: 'Open Sans';
+    color: hsla(0, 0%, 100%, .3);
+    display: block;
+    background: transparent;
+    border: none;
+    outline: 0;
+    display: inline;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.select option {
+    color: #000;
+    cursor: pointer;
 }
