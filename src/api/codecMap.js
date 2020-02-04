@@ -18,7 +18,7 @@ const canPlayVp9 = () => (testCodec('video/mp4; codecs="vp9"') || testCodec('vid
 // Generate compatibility map for API
 export const createCompatibilityMap = () => ([
     // We prefer DASH/DOWNLOAD <3
-    /*{
+    {
         type: "HLS",
         // Video codecs supported by HLS: H264, HEVC
         video: [
@@ -32,7 +32,7 @@ export const createCompatibilityMap = () => ([
             ...(canPlayAc3() ? [{ codec: "ac3" }] : []), // Supported by Microsoft Edge
             ...(canPlayEc3() ? [{ codec: "ec3" }] : []), // Supported by Microsoft Edge
         ]
-    },*/ {
+    }, {
         type: "DOWNLOAD",
         format: [
             { container: "mp4" },
