@@ -2,9 +2,8 @@ import React from 'react';
 import Shaka from 'shaka-player';
 import PropTypes from 'prop-types';
 import style from './style.module.css';
-import Spinner from '../Spinner';
 
-class PlayerShaka extends React.Component {
+class PlayerDash extends React.Component {
     constructor(props) {
         super(props);
         this.ref = React.createRef();
@@ -12,7 +11,7 @@ class PlayerShaka extends React.Component {
 
     render() {
         return (
-            <video ref={this.ref} className={style.player} autoPlay width="1920" height="1080" controls/>
+            <video ref={this.ref} className={style.player} autoPlay width="1920" height="1080" controls />
         );
     }
 
@@ -55,8 +54,8 @@ class PlayerShaka extends React.Component {
     }
 }
 
-PlayerShaka.propTypes = {
+PlayerDash.propTypes = {
     url: PropTypes.string
 };
 
-export default PlayerShaka;
+export default PlayerDash;
